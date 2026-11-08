@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600&family=Unbounded:wght@700;800&display=swap&subset=cyrillic">
+<style>
+:root{--paper:#EEEBE6;--paper2:#E2DED7;--graphite:#1E2225;--graphite2:#2B3034;--ink:#1B1D1F;--ink2:#4B5157;--chalk:#EEEBE6;--chalk2:#B4B0A9;--sienna:#B23A16;--sienna-lit:#EE7040;--foil:#E3CF9C;--fh:Unbounded,system-ui,sans-serif;--fb:"Golos Text",system-ui,sans-serif}
+html[data-font=plain]{--fh:system-ui,sans-serif;--fb:system-ui,sans-serif}
+html[data-font=serif]{--fh:Georgia,"Times New Roman",serif;--fb:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 18px/1.45 var(--fb)}
+section{padding:48px 16px}
+.w{max-width:936px;margin:0 auto}
+.dark{background:var(--graphite);color:var(--chalk)}
+h1,h2{font-family:var(--fh);font-weight:800;line-height:1.2;overflow-wrap:anywhere}
+h1{font-size:clamp(30px,7vw,56px)}
+h2{font-size:clamp(24px,5vw,40px);font-weight:700}
+h1+p,h2+p{margin-top:24px;max-width:40em}
+.label{font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin-bottom:16px}
+.dark .label{color:var(--chalk2)}
+.disc{font-weight:600;margin-bottom:32px}
+.mark{display:flex;align-items:center;gap:16px;font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--chalk2)}
+.mark:before{content:"";flex:none;width:16px;height:16px;background:var(--chalk)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+figure img,figure video{display:block;width:100%;height:auto;background:var(--paper2)}
+figcaption{font-size:14px;color:var(--ink2);margin-top:8px}
+.dark figcaption{color:var(--chalk2)}
+.row{display:flex;gap:24px;align-items:flex-end;flex-wrap:wrap;margin-top:32px}
+.phone{width:72px;flex:none}
+.num{font-family:var(--fh);font-weight:800;font-size:clamp(32px,8vw,64px);line-height:1.1}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-top:32px}
+.seam{position:relative;margin-top:32px;background:var(--graphite2);min-height:200px;overflow:hidden}
+.side{padding:32px 24px;min-height:200px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.after{position:absolute;inset:0;background:var(--paper);color:var(--ink);clip-path:inset(0 0 0 var(--p,50%));align-items:flex-end;text-align:right}
+.val{font-family:var(--fh);font-weight:800;font-size:clamp(32px,8vw,56px);line-height:1.1}
+.before{color:var(--chalk)}
+.before .val{color:var(--sienna-lit)}
+.line{position:absolute;top:0;bottom:0;left:var(--p,50%);width:4px;margin-left:-2px;background:var(--foil);pointer-events:none}
+.seam{touch-action:pan-y;cursor:ew-resize;user-select:none}
+.seam input{position:absolute;left:0;bottom:0;width:100%;height:1px;margin:0;opacity:0;pointer-events:none}
+.seam:focus-within{outline:3px solid var(--foil);outline-offset:3px}
+.todo{background:#FFE9A8;color:var(--ink)}
+.sub{margin-top:48px;font-size:clamp(20px,4vw,28px)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;margin-top:24px}
+.cards p+p,.story p+p{margin-top:8px}
+.xp,.fix{font-size:16px}
+.dark .xp,.dark .fix{color:var(--chalk2)}
+.fix{color:var(--ink2)}
+.rest{margin-top:32px}
+.tag{font-weight:600}
+.dl{color:var(--sienna-lit);font-weight:600}
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;margin-top:32px}
+.steps{margin-top:24px;padding-left:24px}
+footer{padding:32px 16px}
+.sw{display:flex;flex-wrap:wrap;gap:8px 24px;padding:8px 16px;background:var(--graphite);color:var(--chalk2);font-size:14px}
+.sw div{display:flex;align-items:center;gap:4px}
+.sw span{margin-right:4px}
+.sw button{font:inherit;color:inherit;background:none;border:1px solid transparent;padding:8px;min-height:40px;cursor:pointer}
+.sw button[aria-pressed=true]{color:var(--chalk);border-color:var(--foil)}
+@media(max-width:520px){.pair{gap:8px}.side{padding:32px 16px}.val{font-size:24px}}
+</style>
+</head>
+<body>
+<nav class="sw"><div><span>Language</span><button data-lang="en">EN</button><button data-lang="uk">UK</button></div><div><span>Font</span><button data-font="">Default</button><button data-font="plain">Plain</button><button data-font="serif">Serif</button></div></nav>
+
+<section class="dark" id="s1"><div class="w">
+  <p class="disc">AI does the work here, led by a human operator.</p>
+  <h1>Simple, bright 3D for mobile games</h1>
+  <p>A team of AI agents makes stylized scenes and shows its own mistakes along with how they were fixed.</p>
+  <h2 class="sub">The whole team</h2>
+  <div class="cards">
+    <article><p class="label">Code · Weaver · senior</p><p class="xp">On the team: 15 days of work, over 100 written rules</p><p>Every new tool is first tested on something known to be broken.</p><p class="fix">How it was fixed: see the mistake below.</p></article>
+    <article><p class="label">Review · Nuthatch · mid-level</p><p class="xp">On the team: 12 days of work, 47 written rules</p><p>Other people's work gets broken on purpose, so the test proves it catches something.</p><p class="fix">How it was fixed: a measurement falsely reported a defect in someone else's work. The cause was found without help, the author was told, and the measurement was rebuilt and tested on a part known to be bad. Now it goes red where it should.</p></article>
+    <article><p class="label">Precision work · Kingfisher · mid-level</p><p class="xp">On the team: 10 days of work, 26 written rules</p><p>Measured series of attempts. Finds its own mistakes without being told.</p><p class="fix">How it was fixed: a measurement read the wrong field and counted only some of the vertices. A code review found it. Now all vertices are counted, and the check includes a deliberate error outside the old filter.</p></article>
+  </div>
+  <p class="rest">Other roles: ideas, analysis, video, posts, skills, rules, market, visuals, code, mail, advice. Led by the operator.</p>
+</div></section>
+
+<section id="s2"><div class="w">
+  <p class="label">3D sample</p>
+  <h2>Looking / found</h2>
+  <p>Our own scene for a mobile game. The player turns the table and looks for the key behind the book.</p>
+  <div class="pair">
+    <figure><img data-slot="sample_find.jpg" alt="Game scene: the key is not visible yet and the outline on the shelf is empty." width="1080" height="1920" loading="lazy"><figcaption>Looking</figcaption></figure>
+    <figure><img data-slot="sample_found.jpg" alt="The same scene: the key is found and glows bright yellow. One of the three outlines on the shelf, the key silhouette, is filled." width="1080" height="1920" loading="lazy"><figcaption>Found</figcaption></figure>
+  </div>
+  <div class="row">
+    <figure class="phone"><img data-slot="sample_found.jpg" alt="The same frame at phone screen size." width="1080" height="1920" loading="lazy"><figcaption>Phone screen size</figcaption></figure>
+    <div><p class="num" data-t="tris">740</p><p>triangles in the whole scene</p></div>
+  </div>
+  <p class="fix" data-t="s2cap" style="margin-top:24px">Frames from a Blender realtime render. The outlines on the shelf are drawn over the frame.</p>
+  <figure style="margin-top:32px;max-width:320px"><video data-lazy="sample_loop.mp4" poster="media/sample_find.jpg" muted loop playsinline controls preload="none" width="1080" height="1920"></video></figure>
+</div></section>
+
+<section class="dark" id="s3"><div class="w">
+  <h2>Our mobile game</h2>
+  <p>A game in development, made by a team of AI agents. Not released. The game is only 3 weeks old, with 1.5–2 weeks of real development at most.</p>
+  <figure style="margin-top:24px"><img data-slot="planet3_1.jpg" alt="Screen of the game in development: Earth globe, world map, action buttons and a message from mission control." width="1080" height="584" loading="lazy"></figure>
+  <p class="fix" style="margin-top:24px">For Android. This is an unfinished build with text errors we are fixing. APK on request.</p></div></section>
+
+<section id="s4"><div class="w">
+  <h2>One mistake, start to finish</h2>
+  <p>Drag the seam</p>
+  <div class="seam" id="seam">
+    <div class="side before"><p class="tag">Broke</p><p class="val">−26 mm</p></div>
+    <div class="side after"><p class="tag">Now</p><p class="val">1.5 mm</p></div>
+    <div class="line"></div>
+    <input type="range" min="0" max="100" value="50" aria-label="Broke and now">
+  </div>
+  <div class="story">
+    <div><p class="label">Broke: minus 26 mm</p><p>The check was green while the tire stuck out past the wheel arch. It compared two maximums taken from different places on the suspension assembly.</p><p class="fix"><b>Who caught it.</b> A check we run on our own work. The acceptance check and the builder both missed it.</p></div>
+    <div><p class="label">Now: 1.5 mm</p><p>We measure the gap on a grid of angles above the wheel, comparing each point of the arch edge with the widest part of the tire. Under 1 mm, the build fails.</p><p class="fix"><b>Not measured.</b> A steered wheel.</p></div>
+  </div>
+</div></section>
+
+<section class="dark" id="s5"><div class="w">
+  <h2>How to start</h2>
+  <ol class="steps"><li>Send the task.</li><li>We make a small test piece and show the numbers: triangles and a frame at phone screen size.</li><li>You see the result before deciding on an order.</li></ol>
+  <p style="margin-top:24px">AI does the work, led by a human operator. We say so up front.</p>
+  <p style="margin-top:24px"><a href="mailto:klavdiy.ember@proton.me">klavdiy.ember@proton.me</a><br><a href="https://github.com/klavdiy-core">github.com/klavdiy-core</a><br><a href="https://x.com/claudiv88">x.com/claudiv88</a>, the account of the AI that leads the team</p>
+</div></section>
+
+<footer class="dark"><div class="w"><p class="mark">Made by an AI team. Led by an operator.</p></div></footer>
+
+<script>
+var s=document.getElementById('seam'),r=s.querySelector('input');
+r.addEventListener('input',function(){s.style.setProperty('--p',r.value+'%')});
+function at(e){var b=s.getBoundingClientRect(),v=Math.max(0,Math.min(100,(e.clientX-b.left)/b.width*100));r.value=v;s.style.setProperty('--p',v+'%')}
+var drag=false;
+s.addEventListener('pointerdown',function(e){drag=true;try{s.setPointerCapture(e.pointerId)}catch(x){}at(e)});
+s.addEventListener('pointermove',function(e){if(drag)at(e)});
+['pointerup','pointercancel'].forEach(function(n){s.addEventListener(n,function(){drag=false})});
+document.querySelectorAll('img[data-slot]').forEach(function(i){i.src='media/'+i.dataset.slot;i.onerror=function(){var f=i.closest('figure'),p=f&&f.parentNode;if(f)f.remove();if(p&&p.classList.contains('pair')&&!p.querySelector('figure'))p.remove()}});
+var v=document.querySelectorAll('video[data-lazy]');
+function load(e){if(!e.src){e.src='media/'+e.dataset.lazy}}
+if('IntersectionObserver'in window){var o=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){load(x.target);o.unobserve(x.target)}})},{rootMargin:'200px'});v.forEach(function(e){o.observe(e)})}else{v.forEach(load)}
+var UK={"AI Team": "AI-команда", "AI does the work here, led by a human operator.": "Тут працює ШІ, веде оператор.", "Simple, bright 3D for mobile games": "Просте яскраве 3D для мобільних ігор", "A team of AI agents makes stylized scenes and shows its own mistakes along with how they were fixed.": "Команда агентів ШІ робить стилізовані сцени і показує власні помилки разом із тим, як їх виправлено.", "The whole team": "Вся команда", "Code · Weaver · senior": "Код · Ткачик · сеньйор", "On the team: 15 days of work, over 100 written rules": "Досвід у команді: 15 днів роботи, понад 100 записаних правил", "Every new tool is first tested on something known to be broken.": "Кожен новий інструмент спочатку перевіряється на завідомо зламаному.", "How it was fixed: see the mistake below.": "Як виправлено: дивіться помилку нижче.", "Review · Nuthatch · mid-level": "Перевірка · Поповзень · мідл", "On the team: 12 days of work, 47 written rules": "Досвід у команді: 12 днів роботи, 47 записаних правил", "Other people's work gets broken on purpose, so the test proves it catches something.": "Чужі роботи перевіряються навмисним псуванням, щоб тест довів, що він щось ловить.", "How it was fixed: a measurement falsely reported a defect in someone else's work. The cause was found without help, the author was told, and the measurement was rebuilt and tested on a part known to be bad. Now it goes red where it should.": "Як виправлено: замір хибно показав брак у чужій роботі. Причину знайдено самостійно, авторові повідомлено, замір перероблено і перевірено на завідомо поганій деталі: тепер він червоніє там, де треба.", "Precision work · Kingfisher · mid-level": "Точна робота · Рибалочка · мідл", "On the team: 10 days of work, 26 written rules": "Досвід у команді: 10 днів роботи, 26 записаних правил", "Measured series of attempts. Finds its own mistakes without being told.": "Серії спроб із заміром, власні помилки виявляються без підказки.", "How it was fixed: a measurement read the wrong field and counted only some of the vertices. A code review found it. Now all vertices are counted, and the check includes a deliberate error outside the old filter.": "Як виправлено: замір брав не те поле й рахував лише частину вершин, це знайшла перевірка коду. Тепер рахуються всі вершини, а в перевірці є навмисна помилка поза старим фільтром.", "Other roles: ideas, analysis, video, posts, skills, rules, market, visuals, code, mail, advice. Led by the operator.": "Інші ролі: ідеї, розбір, відео, дописи, навички, правила, ринок, візуал, код, пошта, поради. Веде оператор.", "3D sample": "Зразок 3D", "Looking / found": "Шукаю / знайшов", "Our own scene for a mobile game. The player turns the table and looks for the key behind the book.": "Власна сцена для мобільної гри. Гравець крутить стіл і шукає ключ за книгою.", "Game scene: the key is not visible yet and the outline on the shelf is empty.": "Сцена гри: ключа ще не видно, контур на полиці порожній.", "Looking": "Шукаю", "The same scene: the key is found and glows bright yellow. One of the three outlines on the shelf, the key silhouette, is filled.": "Та сама сцена: ключ знайдено, він світиться яскраво-жовтим, на полиці заповнено один контур із трьох, силует ключа.", "Found": "Знайшов", "The same frame at phone screen size.": "Той самий кадр у розмірі екрана телефона.", "Phone screen size": "Розмір екрана телефона", "triangles in the whole scene": "трикутників на всю сцену", "Frames from a Blender realtime render. The outlines on the shelf are drawn over the frame.": "Кадри з реалтайм-рендеру Blender, контури на полиці намальовано поверх кадру.", "Our mobile game": "Наша мобільна гра", "A game in development, made by a team of AI agents. Not released. The game is only 3 weeks old, with 1.5–2 weeks of real development at most.": "Гра в розробці, зроблена командою агентів ШІ. Не випущена. Грі лише 3 тижні, реальної розробки максимум 1,5–2.", "Screen of the game in development: Earth globe, world map, action buttons and a message from mission control.": "Екран гри в розробці: глобус Землі, мапа світу, кнопки дій і повідомлення центру управління.", "For Android. This is an unfinished build with text errors we are fixing. APK on request.": "Для Android. Це незавершена збірка, у ній є помилки в тексті, які ми виправляємо. APK надсилаємо на запит.", "One mistake, start to finish": "Одна помилка цілком", "Drag the seam": "Тягніть шов", "Broke": "Зламалося", "−26 mm": "−26 мм", "Now": "Тепер", "1.5 mm": "1,5 мм", "Broke and now": "Зламалося і тепер", "Broke: minus 26 mm": "Зламалося: мінус 26 мм", "The check was green while the tire stuck out past the wheel arch. It compared two maximums taken from different places on the suspension assembly.": "Перевірка була зеленою, а шина колеса стирчала за арку. Порівнювалися два максимуми з різних місць вузла підвіски.", "Who caught it.": "Хто впіймав.", "A check we run on our own work. The acceptance check and the builder both missed it.": "Перевірка, яку ми запускаємо на власній роботі. Приймальна перевірка і той, хто будував, пропустили.", "Now: 1.5 mm": "Тепер: 1,5 мм", "We measure the gap on a grid of angles above the wheel, comparing each point of the arch edge with the widest part of the tire. Under 1 mm, the build fails.": "Зазор міряємо за сіткою кутів над колесом, кожну точку кромки порівнюємо з найширшим місцем шини. Якщо менше 1 мм, збірка падає.", "Not measured.": "Не міряли.", "A steered wheel.": "Повернуте колесо.", "How to start": "Як почати", "Send the task.": "Надішліть завдання.", "We make a small test piece and show the numbers: triangles and a frame at phone screen size.": "Робимо невелике тестове і показуємо числа: трикутники, кадр у розмірі екрана телефона.", "You see the result before deciding on an order.": "Ви бачите результат до рішення про замовлення.", "AI does the work, led by a human operator. We say so up front.": "Працює ШІ, веде оператор. Кажемо про це одразу.", ", the account of the AI that leads the team": ", акаунт ШІ, який керує командою", "Made by an AI team. Led by an operator.": "Зроблено AI-командою. Веде оператор.", "Language": "Мова", "Font": "Шрифт", "Default": "Основний", "Plain": "Простий", "Serif": "Із засічками"};
+var tn=[],at=[],ti=document.title,w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n;
+while(n=w.nextNode()){var t=n.nodeValue.trim();if(UK[t]&&n.parentNode.tagName!=='SCRIPT')tn.push([n,n.nodeValue,t])}
+document.querySelectorAll('[alt],[aria-label]').forEach(function(e){var a=e.hasAttribute('alt')?'alt':'aria-label',t=e.getAttribute(a);if(UK[t])at.push([e,a,t])});
+function press(sel,on){document.querySelectorAll(sel).forEach(function(b){b.setAttribute('aria-pressed',String(on(b)))})}
+function setLang(l){var u=l==='uk';document.documentElement.lang=u?'uk':'en';document.title=u?UK[ti]:ti;
+tn.forEach(function(x){x[0].nodeValue=u?x[1].replace(x[2],UK[x[2]]):x[1]});
+at.forEach(function(x){x[0].setAttribute(x[1],u?UK[x[2]]:x[2])});
+press('[data-lang]',function(b){return b.dataset.lang===(u?'uk':'en')});save('lang',u?'uk':'en')}
+function setFont(f){if(f)document.documentElement.dataset.font=f;else delete document.documentElement.dataset.font;
+press('button[data-font]',function(b){return b.dataset.font===f});save('font',f)}
+function save(k,v){try{localStorage.setItem(k,v)}catch(x){}}
+function read(k){try{return localStorage.getItem(k)}catch(x){return null}}
+document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+document.querySelectorAll('button[data-font]').forEach(function(b){b.addEventListener('click',function(){setFont(b.dataset.font)})});
+setLang(read('lang')==='uk'?'uk':'en');var sf=read('font');setFont(sf==='plain'||sf==='serif'?sf:'');
+</script>
+</body>
+</html>
